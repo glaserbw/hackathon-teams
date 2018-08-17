@@ -5,4 +5,8 @@
 	<p>
 	  <%= team.members %>
 	</p>
+
+	<a href="/teams/edit/<%= team.name %>" class="btn btn-success">Edit</a>
+	<a href="/teams/<%= team.name %>" class="btn btn-danger delete-link">Delete Team</a><br>
+
 </div>
