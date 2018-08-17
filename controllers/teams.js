@@ -34,13 +34,16 @@ router.get('/:name', function(req, res) {
 
 // put the new team name 
 router.put("/:name", function(req, res) {
-	teamService.editTeam(req.params.name, req.body);
-	res.send("PUT the new team!");
+	if(req.params.name == null) {
+		res.send("no can do, chief")
+	} else {
+		teamService.editTeam(req.params.name, req.body);
+		res.send("PUT the new team!");
+	}
 });
 
 // Delete team name 
 router.delete("/:name", function(req, res) {
-	console.log("name:", req.params.name);
 	teamService.deleteTeam(req.params.name);
 	res.send("deleted");
 });
